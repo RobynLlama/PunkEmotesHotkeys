@@ -6,7 +6,7 @@ public static class HotkeyQueen
 {
   public static void SendEmoteChatMessage(string emoteName)
   {
-    if (GetLocalPlayerObject() is not Player localPlayer)
+    if (Player._mainPlayer is not Player localPlayer)
     {
       AnimationHotkeysPlugin.Log.LogInfo($"Local player doesn't exist right now");
       return;
@@ -14,14 +14,6 @@ public static class HotkeyQueen
 
     AnimationHotkeysPlugin.Log.LogInfo($"Sending this chat message `/em {emoteName.ToLower()}`");
     localPlayer.gameObject.GetComponent<ChatBehaviour>().Send_ChatMessage($"/em {emoteName.ToLower()}");
-  }
-
-  internal static Player? GetLocalPlayerObject()
-  {
-    if (AtlyssNetworkManager._current is null)
-      return null;
-
-    return AtlyssNetworkManager._current._connectedPlayers.Where(player => player.isLocalPlayer).FirstOrDefault();
   }
 }
 
