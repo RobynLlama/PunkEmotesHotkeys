@@ -1,7 +1,7 @@
 {
   "name": "PunkEmotesHotkeys",
   "description": "Quick and dirty emotes hotkey plugin",
-  "version_number": "1.0.0",
+  "version_number": "1.0.1",
   "dependencies": [
     "BepInEx-BepInExPack-5.4.2100",
     "NunyaBusiness-Punkalyn_PunkEmotes-1.0.0"
