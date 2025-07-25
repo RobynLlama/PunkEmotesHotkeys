@@ -8,12 +8,12 @@ public static class HotkeyQueen
   {
     if (Player._mainPlayer is not Player localPlayer)
     {
-      AnimationHotkeysPlugin.Log.LogInfo($"Local player doesn't exist right now");
+      AnimationHotkeysPlugin.Log.LogDebug($"Local player doesn't exist right now");
       return;
     }
 
-    AnimationHotkeysPlugin.Log.LogInfo($"Sending this chat message `/em {emoteName.ToLower()}`");
-    localPlayer.gameObject.GetComponent<ChatBehaviour>().Send_ChatMessage($"/em {emoteName.ToLower()}");
+    AnimationHotkeysPlugin.Log.LogDebug($"Sending this chat message `/em {emoteName.ToLower()}`");
+    localPlayer.gameObject.GetComponent<ChatBehaviour>().Cmd_SendChatMessage($"/em {emoteName.ToLower()}", ChatBehaviour.ChatChannel.GLOBAL);
   }
 }
 
