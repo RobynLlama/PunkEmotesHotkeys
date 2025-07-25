@@ -34,6 +34,12 @@ public class AnimationHotkeysPlugin : BaseUnityPlugin
     }
 
 
+    if (HKConfig.BackslashEmote.Value.Equals("sitinit02"))
+    {
+      Log.LogWarning("Animation names have changed, rewriting your config to use the correct animation for sitinit02");
+      HKConfig.BackslashEmote.Value = "chang_sitinit02";
+      Config.Save();
+    }
   }
 
 }
